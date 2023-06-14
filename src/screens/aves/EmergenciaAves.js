@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, Button, TouchableWithoutFeedback } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { TextInput } from "react-native-paper";
 import styles from "../../components/Style";
 import { medEmergenciaAves } from "../../data/dataMedicamentos";
@@ -69,8 +69,8 @@ const EmergenciaAves = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
-                <BotaoVoltar rota={() => navigation.goBack()} />
-                <Text style={styles.titulo2}>Cálculadora de Emergência {"\n"}em Aves</Text>
+            <BotaoVoltar rota={() => navigation.goBack()}/>
+                <Text style={styles.titulo2}>Calculadora de Emergência {"\n"}em Aves</Text>
             </View>
             <View style={styles.inputContainer}>
                 <TextInput

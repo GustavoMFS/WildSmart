@@ -2,6 +2,18 @@ import React from "react";
 import { StyleSheet, Text, TouchableHighlight, View, TouchableWithoutFeedback, TouchableOpacity } from "react-native";
 import Icon from 'react-native-vector-icons/Ionicons'
 
+
+const BotaoVoltarConfig = ({ rota, navigation  }) => {
+  return (
+    <TouchableWithoutFeedback onPress={() => navigation.navigate(rota)} >
+    <View>
+      <Icon name="arrow-back-outline" size={50} color="black"></Icon>
+    </View>
+  </TouchableWithoutFeedback>
+    )
+  }
+
+
 const BotaoVoltar = ({ rota }) => {
   return (
     <TouchableWithoutFeedback onPress={(rota)} >
@@ -33,6 +45,18 @@ const WarnButton = ({ texto, rota, navigation }) => {
           </TouchableOpacity>
       </View>
 
+  )
+}
+
+const CalculadoraIndiv = ({ rota, navigation  }) => {
+  return (
+    <View style={{alignItems:'center'}}>
+      <TouchableHighlight
+        style={styles.button}
+        onPress={() => navigation.navigate(rota)}>
+        <Text style={styles.texto}>Calculadora Individual</Text>
+      </TouchableHighlight>
+    </View>
   )
 }
 
@@ -74,4 +98,6 @@ export {
   CalcularButton,
   BotaoVoltar,
   WarnButton,
+  BotaoVoltarConfig,
+  CalculadoraIndiv
 }

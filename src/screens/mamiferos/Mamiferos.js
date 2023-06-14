@@ -2,13 +2,13 @@ import React from "react";
 import { View, Text, ScrollView } from "react-native";
 import styles from "../../components/Style";
 import NavButton from "../../navigation/Navegacao";
-import { BotaoVoltar } from "../../components/BotaoCustom";
+import { BotaoVoltarConfig } from "../../components/BotaoCustom";
 
 const TelaMamiferos = ({ navigation }) => (
     <View style={styles.container}>
         <View style={styles.cabecalhoEspecie}>
             <View style={{ flexDirection: 'row' }}>
-                <BotaoVoltar rota={() => navigation.goBack()} />
+            <BotaoVoltarConfig rota={'NavInicial'} navigation={navigation} />
                 <Text style={styles.titulo}>
                     Mamíferos
                 </Text>

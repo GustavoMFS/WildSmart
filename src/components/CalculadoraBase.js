@@ -74,7 +74,11 @@ const CalculadoraBase = (props) => {
                 />
             </View>
             <CalcularButton rota={calcular}/>
-            <ScrollView nestedScrollEnabled={true}>
+            <ScrollView 
+                nestedScrollEnabled={true} 
+                maximumZoomScale={10}
+                contentContainerStyle={{ flexGrow: 1 }}
+                >
                 <ScrollView horizontal={true}>
                     {resultados.length > 0 && (
                         <View style={styles.tabelaContainer}>

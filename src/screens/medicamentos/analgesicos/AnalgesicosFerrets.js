@@ -3,7 +3,8 @@ import { View, Text, ScrollView } from "react-native";
 import styles from "../../../components/Style";
 import CalculadoraBase from "../../../components/CalculadoraBase";
 import { Analgesia } from "../../../data/dataMedicamentos";
-import { BotaoVoltar } from "../../../components/BotaoCustom";
+import { BotaoVoltar, CalculadoraIndiv } from "../../../components/BotaoCustom";
+import CalculadoraIndividual from "../../../components/CalculadoraIndividual";
 
 const AnalgesicosFerrets = ({ navigation }) => {
   const atualizacoes = [
@@ -19,6 +20,7 @@ const AnalgesicosFerrets = ({ navigation }) => {
     { index: 9, doses: [5, 10] },
     { index: 10, doses: [0.1, 5] },
   ];
+
 
   const medAtualizados = Analgesia.map((med, i) => {
     const atualizacao = atualizacoes.find(a => a.index === i);
@@ -38,16 +40,13 @@ const AnalgesicosFerrets = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      <View style={{
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        padding: 20,
-      }}>
+      <View style={styles.cabecalhoEspecie}>
         <View style={{ flexDirection: 'row' }}>
           <BotaoVoltar rota={() => navigation.goBack()} />
           <Text style={styles.titulo}>
             Ferrets - Analgésicos/Anti-Inflamatórios
           </Text>
+          {/* <CalculadoraIndiv rota={'CalculadoraIndividual'} navigation={navigation}/> */}
         </View>
       </View>
       <ScrollView>

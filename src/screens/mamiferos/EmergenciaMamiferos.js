@@ -69,8 +69,8 @@ const EmergenciaMamiferos = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
-                <BotaoVoltar rota={() => navigation.goBack()} />
-                <Text style={styles.titulo2}>Cálculadora de Emergência {"\n"}em Mamíferos</Text>
+            <BotaoVoltar rota={() => navigation.goBack()}/>
+                <Text style={styles.titulo2}>Calculadora de Emergência {"\n"}em Mamíferos</Text>
             </View>
             <View style={styles.inputContainer}>
                 <TextInput

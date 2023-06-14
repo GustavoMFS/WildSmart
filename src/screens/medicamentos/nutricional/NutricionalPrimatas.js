@@ -28,11 +28,7 @@ const NutricionalPrimatas = ({ navigation }) => {
   });
   return (
     <View style={styles.container}>
-      <View style={{
-        justifyContent: 'flex-start',
-        alignItems: 'flex-start',
-        padding: 20,
-      }}>
+      <View style={styles.cabecalhoEspecie}>
         <View style={{ flexDirection: 'row' }}>
           <BotaoVoltar rota={() => navigation.goBack()} />
           <Text style={styles.titulo}>

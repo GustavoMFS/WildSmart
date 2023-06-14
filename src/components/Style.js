@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   container2: {
     flex: 1,
     backgroundColor: 'white',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
   tituloPosicao: {
     alignItems: 'center',
@@ -17,10 +17,9 @@ const styles = StyleSheet.create({
   },
   titulo: {
     fontSize: 25,
-    // fontWeight: 'bold',
-    textAlign: 'center',
     color: 'black',
-    justifyContent: 'flex-start',
+    alignSelf: 'center',
+    textAlign: 'center'
   },
   background: {
     backgroundColor: '#1d0040',
@@ -51,7 +50,7 @@ const styles = StyleSheet.create({
   cabecalho: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#BDBDBD",
+    backgroundColor: "#c4c4c4",
     height: 60,
     // padding: 10,
   },
@@ -137,10 +136,11 @@ const styles = StyleSheet.create({
   creditos: {
     fontWeight: 'bold',
     textAlign: 'center',
+    color: 'black',
 
   },
   creditosRodaPe: {
-    flex: 1,
+    flex: 3 ,
     justifyContent: 'flex-end',
     padding: 16,
 
