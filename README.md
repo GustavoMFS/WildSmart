@@ -1,0 +1,1 @@
+Calculadora criada com intuito de auxiliar médicos veterinários com foco de atuação em clínica de animais selvagens. O app fornece doses e calculadoras para diversos medicamentos e diferentes espécies.
