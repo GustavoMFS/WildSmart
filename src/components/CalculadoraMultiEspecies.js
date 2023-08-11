@@ -2,7 +2,9 @@ import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView } from "react-native";
 import { TextInput } from "react-native-paper";
 import styles from "./Style"
-import { CalcularButton } from './BotaoCustom'
+import { CalcularButton, BotaoCalculadoraIndividual } from './BotaoCustom'
+import InfoCalc from "../screens/popUp/PopUpInfo";
+import { useNavigation } from "@react-navigation/native";
 
 const CalculadoraMultiEspecies = (props) => {
     const medIndefinida = props
@@ -21,7 +23,7 @@ const CalculadoraMultiEspecies = (props) => {
     };
     const calcular = () => {
         const res = [];
-        for (let i = 0; i <props.medIndefinida.length; i++) {
+        for (let i = 0; i < props.medIndefinida.length; i++) {
             const nomeMedicamento = props.medIndefinida[i].nome;
             const especies = props.medIndefinida[i].especies;
             const doses = props.medIndefinida[i].doses;
@@ -66,6 +68,9 @@ const CalculadoraMultiEspecies = (props) => {
             );
         });
     };
+
+    const navigation = useNavigation()
+
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
@@ -78,7 +83,17 @@ const CalculadoraMultiEspecies = (props) => {
                     accessibilityLabel={`Insira o peso em quilos ${peso}`}
                 />
             </View>
-            <CalcularButton rota={calcular} />
+            <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20 }}>
+                <View>
+                    <BotaoCalculadoraIndividual rota={'Calculadora Individual'} navigation={navigation} />
+                </View>
+                <View style={{ flex: 1, alignItems: 'center' }}>
+                    <CalcularButton rota={calcular} />
+                </View>
+                <View style={{ alignSelf: 'flex-end' }}>
+                    <InfoCalc />
+                </View>
+            </View>
             <ScrollView nestedScrollEnabled={true}>
                 <ScrollView horizontal={true}>
                     {resultados.length > 0 && (

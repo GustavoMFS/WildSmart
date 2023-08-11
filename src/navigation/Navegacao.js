@@ -23,9 +23,12 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 30,
         backgroundColor: '#215bff',
-        borderRadius: 50,
+        // backgroundColor: 'black',
+        borderRadius: 10,
         width: 150,
         height: 120,
+        borderWidth: 2,
+        borderColor: 'black',
     },
     botaoTexto: {
         color: '#fff',

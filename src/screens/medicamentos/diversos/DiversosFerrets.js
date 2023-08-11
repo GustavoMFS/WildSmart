@@ -49,10 +49,14 @@ const DiversosFerrets = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.cabecalhoEspecie}>
         <View style={{ flexDirection: 'row' }}>
-          <BotaoVoltar rota={() => navigation.goBack()} />
-          <Text style={styles.titulo}>
-            Ferrets - Diversos
-          </Text>
+          <View style={{ flex: 1 }}>
+            <BotaoVoltar rota={() => navigation.goBack()} />
+          </View>
+          <View style={{ flex: 7 }}>
+            <Text style={styles.titulo}>
+              Ferrets - Diversos
+            </Text>
+          </View>
         </View>
       </View>
       <ScrollView>

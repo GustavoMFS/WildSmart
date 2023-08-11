@@ -21,6 +21,12 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     textAlign: 'center'
   },
+  tituloTamanhoMenor: {
+    fontSize: 23,
+    color: 'black',
+    alignSelf: 'center',
+    textAlign: 'center'
+  },
   background: {
     backgroundColor: '#1d0040',
   },
@@ -107,7 +113,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flexWrap: "wrap",
     paddingHorizontal: 5,
-    color:  '#000000',
+    color: '#000000',
     fontSize: 17,
   },
   celula2: {
@@ -115,7 +121,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     flexWrap: "wrap",
     paddingHorizontal: 5,
-    color:  '#000000',
+    color: '#000000',
     fontSize: 17,
   },
   textoObs: {
@@ -140,7 +146,7 @@ const styles = StyleSheet.create({
 
   },
   creditosRodaPe: {
-    flex: 3 ,
+    flex: 1,
     justifyContent: 'flex-end',
     padding: 16,
 
@@ -165,12 +171,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#c4c4c4'
   },
   tituloWarn: {
-      textAlign: 'center',
-      fontSize: 30,
-      fontWeight: "bold",
-      color: "black",
-    },
-  textoWarn:{
+    textAlign: 'center',
+    fontSize: 30,
+    fontWeight: "bold",
+    color: "black",
+  },
+  textoWarn: {
     textAlign: 'justify',
     textAlignVertical: 'top',
     fontSize: 18,
@@ -179,6 +185,6 @@ const styles = StyleSheet.create({
   },
 
 
-  });
+});
 
 export default styles

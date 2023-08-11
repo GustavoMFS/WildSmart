@@ -44,10 +44,14 @@ const AtbPasseriformes = ({ navigation }) => {
     <View style={styles.container}>
       <View style={styles.cabecalhoEspecie}>
         <View style={{ flexDirection: 'row' }}>
-          <BotaoVoltar rota={() => navigation.goBack()} />
-          <Text style={styles.titulo}>
-            Passeriformes - Antibióticos
-          </Text>
+          <View style={{ flex: 1 }}>
+            <BotaoVoltar rota={() => navigation.goBack()} />
+          </View>
+          <View style={{ flex: 8 }}>
+            <Text style={styles.titulo}>
+              Passeriformes - Antibióticos
+            </Text>
+          </View>
         </View>
       </View>
       <ScrollView>

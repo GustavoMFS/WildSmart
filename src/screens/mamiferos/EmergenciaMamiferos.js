@@ -4,6 +4,8 @@ import { TextInput } from "react-native-paper";
 import styles from "../../components/Style";
 import { medEmergenciaMamiferos } from "../../data/dataMedicamentos";
 import { BotaoVoltar, CalcularButton } from "../../components/BotaoCustom";
+import InfoCalc from "../popUp/PopUpInfo";
+
 
 const EmergenciaMamiferos = ({ navigation }) => {
     const [peso, setPeso] = useState('');
@@ -69,8 +71,11 @@ const EmergenciaMamiferos = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
-            <BotaoVoltar rota={() => navigation.goBack()}/>
+                <BotaoVoltar rota={() => navigation.goBack()} />
                 <Text style={styles.titulo2}>Calculadora de Emergência {"\n"}em Mamíferos</Text>
+                <View style={{marginLeft: 25}}>
+                    <InfoCalc/>
+                </View>
             </View>
             <View style={styles.inputContainer}>
                 <TextInput

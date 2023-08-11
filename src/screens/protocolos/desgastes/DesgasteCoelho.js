@@ -64,7 +64,7 @@ const DesgasteCoelho = ({ navigation }) => {
                         <BotaoVoltar rota={() => navigation.goBack()} />
                     </View>
                 </TouchableWithoutFeedback>
-                <Text style={styles.titulo2}>Cálculadora para Desgaste {"\n"}em Roedores</Text>
+                <Text style={styles.titulo2}>Cálculadora para Desgaste {"\n"}em Coelhos</Text>
             </View>
             <View style={styles.inputContainer}>
                 <TextInput

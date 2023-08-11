@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, ScrollView, Button } from "react-native";
 import { TextInput } from "react-native-paper";
+import { useNavigation } from "@react-navigation/native";
 import styles from "./Style";
-import { CalcularButton } from "./BotaoCustom";
+import { CalcularButton, BotaoCalculadoraIndividual } from "./BotaoCustom";
+import InfoCalc from "../screens/popUp/PopUpInfo";
+
+
 
 
 const CalculadoraBase = (props) => {
@@ -61,6 +65,9 @@ const CalculadoraBase = (props) => {
             );
         });
     };
+
+    const navigation = useNavigation()
+
     return (
         <View style={styles.container}>
             <View style={styles.inputContainer}>
@@ -73,12 +80,22 @@ const CalculadoraBase = (props) => {
                     accessibilityLabel={`Insira o peso em quilos ${peso}`}
                 />
             </View>
-            <CalcularButton rota={calcular}/>
-            <ScrollView 
-                nestedScrollEnabled={true} 
+            <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20 }}>
+                <View>
+                    <BotaoCalculadoraIndividual rota={'Calculadora Individual'} navigation={navigation}/>
+                </View>
+                <View style={{ flex: 1, alignItems: 'center' }}>
+                    <CalcularButton rota={calcular} />
+                </View>
+                <View style={{ alignSelf: 'flex-end' }}>
+                    <InfoCalc />
+                </View>
+            </View>
+            <ScrollView
+                nestedScrollEnabled={true}
                 maximumZoomScale={10}
                 contentContainerStyle={{ flexGrow: 1 }}
-                >
+            >
                 <ScrollView horizontal={true}>
                     {resultados.length > 0 && (
                         <View style={styles.tabelaContainer}>
