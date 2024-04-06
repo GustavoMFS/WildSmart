@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-paper";
+import { Picker } from '@react-native-picker/picker';
 import { useNavigation } from "@react-navigation/native";
 import styles from "./Style";
 import { CalcularButton, BotaoCalculadoraIndividual } from "./BotaoCustom";
@@ -9,11 +10,13 @@ import InfoCalc from "../screens/popUp/PopUpInfo";
 const CalculadoraBase = (props) => {
     const medIndefinida = props
     const [peso, setPeso] = useState('');
+    const [concentracoesSelecionadas, setConcentracoesSelecionadas] = useState([]);
     const [resultados, setResultados] = useState([]);
 
     useEffect(() => {
         calcular();
-    }, [peso]);
+    }, [peso, concentracoesSelecionadas]);
+
 
     const handlePesoInputChange = (text) => {
         const regex = /^[0-9]*(?:[.,][0-9]*)?$/;
@@ -26,20 +29,29 @@ const CalculadoraBase = (props) => {
         for (let i = 0; i < props.medIndefinida.length; i++) {
             const nomeMedicamento = props.medIndefinida[i].nome;
             const doses = props.medIndefinida[i].doses;
-            const concentracao = props.medIndefinida[i].concentracao;
+            const concentracoes = props.medIndefinida[i].concentracao;
+            const unidade = props.medIndefinida[i].unidade;
+            const concentracaoSelecionada = (concentracoesSelecionadas[i] || concentracoes[0]);
             const doseMinima = doses[0];
             const doseMaxima = doses[1];
-            const volumeMinimo = (peso.replace(",", ".") * doseMinima) / concentracao;
-            const volumeMaximo = (peso.replace(",", ".") * doseMaxima) / concentracao;
-            res.push([nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo]);
+            const volumeMinimo = (peso.replace(",", ".") * doseMinima) / concentracaoSelecionada;
+            const volumeMaximo = (peso.replace(",", ".") * doseMaxima) / concentracaoSelecionada;
+            res.push([nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo, concentracaoSelecionada, unidade]);
         }
         setResultados(res);
     }
+
+    const handleConcentracaoChange = (index, concentracao) => {
+        const updatedConcentracoesSelecionadas = [...concentracoesSelecionadas];
+        updatedConcentracoesSelecionadas[index] = concentracao;
+        setConcentracoesSelecionadas(updatedConcentracoesSelecionadas);
+    };
 
     const renderTableHeader = () => {
         return (
             <View style={styles.cabecalhoTabela}>
                 <Text style={[styles.celula2, styles.textoCabecalho]}>Medicamento</Text>
+                <Text style={[styles.celula, styles.textoCabecalho]}>Concentração</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Dose Mínima (mg/kg)</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Dose Máxima (mg/kg)</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Volume Mínimo (ml)</Text>
@@ -50,10 +62,24 @@ const CalculadoraBase = (props) => {
 
     const renderTableData = () => {
         return resultados.map((res, index) => {
-            const [nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo] = res;
+            const [nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo, concentracao, unidade] = res;
+            const maxLength = Math.max(...props.medIndefinida[index].concentracao.map(conc => `${conc}`.length));
+            const pickerWidth = maxLength * 10
             return (
                 <View key={index} style={styles.linha}>
                     <Text style={[styles.celula2]}>{nomeMedicamento}</Text>
+                    <Text style={[styles.celula]}>{concentracao} {unidade}</Text>
+                    <View style={{ flex: 1 }}>
+                        <Picker
+                            selectedValue={concentracoesSelecionadas[index]}
+                            style={{ height: 50, width: pickerWidth, paddingLeft: 15 }}
+                            dropdownIconColor="#000"
+                            onValueChange={(itemValue) => handleConcentracaoChange(index, itemValue)}>
+                            {props.medIndefinida[index].concentracao.map((concentracao, index) => (
+                                <Picker.Item key={index} label={`${concentracao} ${unidade}`} value={concentracao} style={{ flex: 1 }} />
+                            ))}
+                        </Picker>
+                    </View>
                     <Text style={[styles.celula]}>{doseMinima}</Text>
                     <Text style={[styles.celula]}>{doseMaxima}</Text>
                     <Text style={[styles.celula]}>{volumeMinimo.toFixed(2)}</Text>

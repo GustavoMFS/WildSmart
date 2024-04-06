@@ -14,10 +14,9 @@ const AnalgesicosLagomorfos = ({ navigation }) => {
     { index: 4, doses: [0.1, 0.1] },
     { index: 5, doses: [1, 3] },
     { index: 6, doses: [0.3, 1] },
-    { index: 7, doses: [0.3, 1] },
-    { index: 8, doses: [0.25, 0.5] },
-    { index: 9, doses: [5, 15] },
-    { index: 10, doses: [0.1, 5] },
+    { index: 7, doses: [0.25, 0.5] },
+    { index: 8, doses: [5, 15] },
+    { index: 9, doses: [0.1, 5] },
   ];
 
   const medAtualizados = Analgesia.map((med, i) => {

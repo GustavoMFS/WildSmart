@@ -15,9 +15,8 @@ const AnalgesicosPasseriformes = ({ navigation }) => {
     { index: 5, doses: [1, 5] },
     { index: 6, doses: [0.5, 1] },
     { index: 7, doses: [0.5, 1] },
-    { index: 8, doses: [0.5, 1] },
-    { index: 9, doses: [5, 10] },
-    { index: 10, doses: [0, 0] },
+    { index: 8, doses: [5, 10] },
+    { index: 9, doses: [0, 0] },
   ];
 
   const medAtualizados = Analgesia.map((med, i) => {
@@ -34,7 +33,7 @@ const AnalgesicosPasseriformes = ({ navigation }) => {
       array.splice(index[i], 1);
     }
   }
-  removerMedicamento(medAtualizados, [3, 4, 10]);
+  removerMedicamento(medAtualizados, [3, 4, 9]);
 
   return (
     <View style={styles.container}>

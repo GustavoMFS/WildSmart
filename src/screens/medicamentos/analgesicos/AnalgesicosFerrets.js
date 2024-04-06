@@ -15,10 +15,9 @@ const AnalgesicosFerrets = ({ navigation }) => {
     { index: 4, doses: [0, 0] },
     { index: 5, doses: [1, 3] },
     { index: 6, doses: [0.1, 0.3] },
-    { index: 7, doses: [0.1, 0.3] },
-    { index: 8, doses: [0.25, 1] },
-    { index: 9, doses: [5, 10] },
-    { index: 10, doses: [0.1, 5] },
+    { index: 7, doses: [0.25, 1] },
+    { index: 8, doses: [5, 10] },
+    { index: 9, doses: [0.1, 5] },
   ];
 
 

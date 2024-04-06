@@ -29,15 +29,15 @@ const Sobre = ({ navigation }) => {
           Contato
         </Text>
       </View>
-        <Text style={styles.textoWarn}>
-          {'\t'} Este aplicativo ainda esta em desenvolvimento, portanto podem surgir problemas ou erros ao usá-lo. Caso encontre algum problema ou tenha alguma sugestão envie uma mensagem para o email:
-        </Text>
-        <TouchableHighlight onPress={abrirEmail}>
-          <Text style={{fontSize:20, textAlign: 'center', color: 'blue'}}>gusmfscoder@gmail.com</Text>
-        </TouchableHighlight>
-        <View style={styles.creditosRodaPe}>
-                <Text style={styles.creditos}> V 0.2.0</Text>
-            </View>
+      <Text style={styles.textoWarn}>
+        {'\t'} Este aplicativo ainda esta em desenvolvimento, portanto podem surgir problemas ou erros ao usá-lo. Caso encontre algum problema ou tenha alguma sugestão envie uma mensagem para o email:
+      </Text>
+      <TouchableHighlight onPress={abrirEmail}>
+        <Text style={{ fontSize: 20, textAlign: 'center', color: 'blue' }}>gusmfscoder@gmail.com</Text>
+      </TouchableHighlight>
+      <View style={styles.creditosRodaPe}>
+        <Text style={styles.creditos}> V 1.1.0</Text>
+      </View>
     </View>
   )
 }

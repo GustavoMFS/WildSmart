@@ -14,10 +14,10 @@ const AnalgesicosPrimatas = ({ navigation }) => {
     { index: 4, doses: [0, 0] },
     { index: 5, doses: [2, 5] },
     { index: 6, doses: [0.1, 0.3] },
-    { index: 7, doses: [0.1, 0.3] },
-    { index: 8, doses: [0.5, 2] },
-    { index: 9, doses: [1, 5] },
-    { index: 10, doses: [1, 2] },
+    { index: 7, doses: [0.5, 2] },
+    { index: 8, doses: [1, 5] },
+    { index: 9, doses: [1, 2] },
+    { index: 10, doses: [] },
   ];
 
   const medAtualizados = Analgesia.map((med, i) => {
@@ -34,7 +34,7 @@ const AnalgesicosPrimatas = ({ navigation }) => {
       array.splice(index[i], 1);
     }
   }
-  removerMedicamento(medAtualizados, [1, 3, 4, 6, 7, 9]);
+  removerMedicamento(medAtualizados, [1, 3, 4, 6, 8]);
 
   return (
     <View style={styles.container}>
