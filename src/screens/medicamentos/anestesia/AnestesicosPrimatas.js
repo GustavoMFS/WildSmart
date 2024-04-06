@@ -10,14 +10,14 @@ const AnestesicosPrimatas = ({ navigation }) => {
     { index: 0, doses: [0.5, 1] },
     { index: 1, doses: [0.15, 0.3] },
     { index: 2, doses: [2, 2] },
-    { index: 3, doses: [0.05, 0.05] },
-    { index: 4, doses: [5, 40] },
-    { index: 5, doses: [0.01, 0.01] },
+    { index: 3, doses: [0.05, 0.2] },
+    { index: 4, doses: [5, 12] },
+    { index: 5, doses: [0.01, 0.035] },
     { index: 6, doses: [0.25, 1] },
-    { index: 7, doses: [0.02, .01] },
-    { index: 8, doses: [0.05, 1.2] },
+    { index: 7, doses: [0.02, 0.025] },
+    { index: 8, doses: [0.05, 0.1] },
     { index: 9, doses: [2, 4] },
-    { index: 10, doses: [0.3, 6] },
+    { index: 10, doses: [2.5, 5] },
     { index: 11, doses: [1, 5] },
     { index: 12, doses: [0.5, 6] },
   ];
@@ -36,7 +36,7 @@ const AnestesicosPrimatas = ({ navigation }) => {
       array.splice(index[i], 1);
     }
   }
-  removerMedicamento(medAtualizados, []);
+  removerMedicamento(medAtualizados, [9, 11]);
 
   return (
     <View style={styles.container}>

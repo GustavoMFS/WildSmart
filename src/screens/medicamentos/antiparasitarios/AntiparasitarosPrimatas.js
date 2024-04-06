@@ -9,16 +9,16 @@ const AntiparasitariosPrimatas = ({ navigation }) => {
   const atualizacoes = [
     { index: 0, doses: [0, 0] },
     { index: 1, doses: [0, 0] },
-    { index: 2, doses: [10, 50] },
+    { index: 2, doses: [10, 25] },
     { index: 3, doses: [0, 0] },
-    { index: 4, doses: [7, 25] },
+    { index: 4, doses: [0, 0] },
     { index: 5, doses: [0, 0] },
     { index: 6, doses: [0, 0] },
-    { index: 7, doses: [5, 10] },
+    { index: 7, doses: [0, 0] },
     { index: 8, doses: [0.2, 0.3] },
     { index: 9, doses: [0.5, 0.5] },
     { index: 10, doses: [0, 0] },
-    { index: 11, doses: [100000, 200000] },
+    { index: 11, doses: [100000, 100000] },
   ];
 
   const medAtualizados = Antipara.map((med, i) => {
@@ -35,7 +35,7 @@ const AntiparasitariosPrimatas = ({ navigation }) => {
       array.splice(index[i], 1);
     }
   }
-  removerMedicamento(medAtualizados, [0, 1, 3, 5, 6, 10]);
+  removerMedicamento(medAtualizados, [0, 1, 3, 4, 5, 6, 7, 10]);
 
   return (
     <View style={styles.container}>
@@ -55,7 +55,7 @@ const AntiparasitariosPrimatas = ({ navigation }) => {
         <View>
           <CalculadoraBase medIndefinida={medAtualizados} />
         </View>
-        <Text style={styles.textoObs}>Obs: Fipronil 9,8% possui indicação de 0,2ml/kg.{"\n"}</Text>
+        <Text style={styles.textoObs}>Obs: Para nistatina recomenda-se 100.000U por animal.{"\n"}</Text>
       </ScrollView>
     </View>
   )

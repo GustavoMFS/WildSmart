@@ -19,7 +19,9 @@ const TelaProtocolos = ({ navigation }) => (
             <View>
                 <NavButton texto='Desgaste Roedores' rota={'DesgasteRoedores'} navigation={navigation} />
                 <NavButton texto='Desgaste Coelho' rota={'DesgasteCoelho'} navigation={navigation} />
-
+                <NavButton texto='Pequenos Roedores' rota={'AnestesiaPeqRoedores'} navigation={navigation} />
+                <NavButton texto='Psitacídeos' rota={'ProtocoloPsictacideos'} navigation={navigation} />
+                <NavButton texto='Trachemys' rota={'ProtocoloTrachemys'} navigation={navigation} />
             </View>
         </ScrollView>
     </View>

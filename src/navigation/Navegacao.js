@@ -23,7 +23,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         margin: 30,
         backgroundColor: '#215bff',
-        // backgroundColor: 'black',
         borderRadius: 10,
         width: 150,
         height: 120,

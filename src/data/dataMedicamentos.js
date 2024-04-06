@@ -14,6 +14,23 @@ const AnestesiaCoelhoDesgaste = [
     { nome: 'Atipamezole - Reversor Dexmedeto', doses: 1, concentracao: 5 },
     { nome: 'Flumazenil - Reversor Midazolam', doses: 0.1, concentracao: 0.1 },
 ]
+const AnestesiaPequenosRoedores = [
+    { nome: 'Dexmedetomidina', doses: 0.3, concentracao: 0.5 },
+    { nome: 'Midazolam', doses: 4, concentracao: 5 },
+    { nome: 'Butorfanol 1%', doses: 5, concentracao: 10 },
+    { nome: 'Atipamezole - Reversor Dexmedeto', doses: 1, concentracao: 5 },
+    { nome: 'Flumazenil - Reversor Midazolam', doses: 0.1, concentracao: 0.1 },
+]
+const AnestesiaPsitacideos = [
+    { nome: 'Dexmedetomidina', doses: 0.1, concentracao: 0.5 },
+    { nome: 'Cetamina', doses: 20, concentracao: 100 },
+    { nome: 'Midazolam', doses: 0.5, concentracao: 5 },
+    { nome: 'Atipamezole - Reversor Dexmedeto', doses: 1, concentracao: 5 },
+    { nome: 'Flumazenil - Reversor Midazolam', doses: 0.1, concentracao: 0.1 },
+]
+const AnestesiaTrachemys = [
+    { nome: 'Propofol 1%', doses: 4, concentracao: 10 },
+]
 
 
 //med emergencias
@@ -27,12 +44,12 @@ const medEmergenciaAves = [
 ]
 
 const medEmergenciaMamiferos = [
-    { nome: 'Atropina 0,25mg/ml', especies: ['Coelho', 'Porquinho/Chinchila', 'Ratos'], doses: [[0.1, 0.5], [0.1, 0.2,], [0.05, 0.1]], concentracao: 0.25 },
-    { nome: 'Adrenalina 1mg/ml', especies: ['Coelho', 'Roedores', 'Ferrets'], doses: [[0.2, 0.4], [0.1, 0.1], [0.02, 0.02]], concentracao: 1 },
-    { nome: 'Dexametasona 2mg/ml', especies: ['Roedores'], doses: [[4, 5]], concentracao: 2 },
-    { nome: 'Diazepam 5mg/ml', especies: ['Coelho', 'Roedores'], doses: [[1, 3], [0.5, 5]], concentracao: 5 },
-    { nome: 'Doxapram 20mg/ml', especies: ['Coelho/Roedores', 'Porquinho/Ferrets'], doses: [[5, 10], [2, 5]], concentracao: 20 },
-    { nome: 'Furosemida 10mg/ml', especies: ['Coelho/Roedores'], doses: [[1, 4]], concentracao: 10 },
+    { nome: 'Atropina 0,25mg/ml', especies: ['Coelho', 'Porquinho/Chinchila', 'Ratos', 'Primatas'], doses: [[0.1, 0.5], [0.1, 0.2,], [0.05, 0.1], [0.02, 0.04]], concentracao: 0.25 },
+    { nome: 'Adrenalina 1mg/ml', especies: ['Coelho', 'Roedores', 'Ferrets', 'Primatas'], doses: [[0.2, 0.4], [0.1, 0.1], [0.02, 0.02], [0.2, 0.4]], concentracao: 1 },
+    { nome: 'Dexametasona 2mg/ml', especies: ['Roedores', 'Primatas'], doses: [[4, 5], [0.25, 1]], concentracao: 2 },
+    { nome: 'Diazepam 5mg/ml', especies: ['Coelho', 'Roedores', 'Primatas'], doses: [[1, 3], [0.5, 5], [0.5, 1]], concentracao: 5 },
+    { nome: 'Doxapram 20mg/ml', especies: ['Coelho\nRoedores', 'Porquinho/Ferrets', 'Primatas'], doses: [[5, 10], [2, 5], [2, 2]], concentracao: 20 },
+    { nome: 'Furosemida 10mg/ml', especies: ['Coelho\nRoedores\nPrimatas'], doses: [[1, 4]], concentracao: 10 },
 ];
 
 
@@ -118,7 +135,7 @@ const OutrasMed = [
 /* 11 */{ nome: 'Furosemida \n10mg/ml', doses: [0, 0], concentracao: 10 },
 /* 12 */{ nome: 'Glutamina \n(Nutrisana)', doses: [0, 0], concentracao: 44 },
 /* 13 */{ nome: 'Hydroxizina \n2mg/ml', doses: [0, 0], concentracao: 2 },
-/* 14 */{ nome: 'Lactulose \n667mg/ml', doses: [0, 0], concentracao: 667 },
+/* 14 */{ nome: 'Lactulose \n667mg/ml', doses: [0, 0], concentracao: 1 },
 /* 15 */{ nome: 'Metoclopramida \n5mg/ml', doses: [0, 0], concentracao: 5 },
 /* 16 */{ nome: 'Oleo mineral \n100%', doses: [0, 0], concentracao: 1 },
 /* 17 */{ nome: 'Oxitocina \n10UI/ml', doses: [0, 0], concentracao: 10 },
@@ -164,7 +181,7 @@ const RoedoresAnestSedat = [
  /* 3 */   { nome: 'Butorfanol \n1%', especies: ['Roedores'], doses: [[0.2, 2]], concentracao: 10 },
  /* 4 */   { nome: 'Cetamina \n100mg/ml', especies: ['Roedores'], doses: [[5, 40]], concentracao: 100 },
  /* 5 */   { nome: 'Dexmedetomidina \n0,5mg/ml', especies: ['Roedores'], doses: [[0.1, 0.3]], concentracao: 0.5 },
- /* 6 */   { nome: 'Diazepam \n5mg/ml', especies: ['Roedores','Porquinho da Índia'], doses: [[2.5, 5], [0.5, 5]], concentracao: 5 },
+ /* 6 */   { nome: 'Diazepam \n5mg/ml', especies: ['Roedores', 'Porquinho da Índia'], doses: [[2.5, 5], [0.5, 5]], concentracao: 5 },
  /* 7 */   { nome: 'Flumazenil \n0,1mg/ml', especies: ['Roedores'], doses: [[0.1, 0.1]], concentracao: 0.1 },
  /* 8 */   { nome: 'Midazolam \n5mg/ml', especies: ['Roedores'], doses: [[1, 2]], concentracao: 5 },
  /* 9 */   { nome: 'Petidina \n50mg/ml', especies: ['Roedores'], doses: [[10, 20]], concentracao: 50 },
@@ -185,7 +202,7 @@ const RoedoresATB = [
  /* 8 */ { nome: 'Enrofloxacina \n5%', especies: ['Roedores'], doses: [[5, 20]], concentracao: 50 },
  /* 9 */ { nome: 'Gentamicina \n40mg/ml', especies: ['Roedores'], doses: [[2, 24]], concentracao: 40 },
  /* 10 */ { nome: 'Metronidazol \n0,5%', especies: ['Roedores', 'Gerbil, Hamster, Ratos'], doses: [[10, 25], [10, 50]], concentracao: 5 },
- /* 11 */ { nome: 'Oxitetraciclina \n200mg/ml', especies: ['Chinchila', 'Porquinho da Índia','Gerbil, Hamster, Ratos' ], doses: [[15, 15], [5, 20], [20, 25]], concentracao: 200 },
+ /* 11 */ { nome: 'Oxitetraciclina \n200mg/ml', especies: ['Chinchila', 'Porquinho da Índia', 'Gerbil, Hamster, Ratos'], doses: [[15, 15], [5, 20], [20, 25]], concentracao: 200 },
  /* 12 */ { nome: 'Sulfadimetoxina 5g + Metronidazol 5g (Giardicid)', especies: ['Roedores'], doses: [[25, 50]], concentracao: 50 },
  /* 13 */ { nome: 'Sulfametoxazol 200mg + Trimetoprima 40mg (Bactrin)', especies: ['Roedores', 'Gerbil, Ratos'], doses: [[15, 30], [50, 100]], concentracao: 48 },
 ];
@@ -211,7 +228,7 @@ const RoedoresOutrasMed = [
 /* 2 */{ nome: 'Aminofilina \n24mg/ml', especies: ['Ratos', 'Porquinho da Índia'], doses: [[10, 10], [50, 50]], concentracao: 24 },
 /* 3 */{ nome: 'Benazepril \n10mg (comprimido)', especies: ['Roedores'], doses: [[0.05, 0.1]], concentracao: 0.5 },
 // /* 4 */{ nome: 'Betanecol \n5mg/ml', especies: ['Roedores'], doses: [[0, 0]], concentracao: 5 },
-/* 5 */{ nome: 'Bromexina \n1,6mg/ml', especies: ['Roedores'], doses: [[0.5,10]], concentracao: 1.6 },
+/* 5 */{ nome: 'Bromexina \n1,6mg/ml', especies: ['Roedores'], doses: [[0.5, 10]], concentracao: 1.6 },
 /*  */// { nome: 'Carvão Ativado',  especies: ['Roedores'], doses: [[0, 0]], concentracao: 50 },
 /* 6 */{ nome: 'Doxapram \n20mg/ml', especies: ['Roedores'], doses: [[5, 10]], concentracao: 20 },
 /* 7 */{ nome: 'Enalapril \n5mg/ml', especies: ['Roedores'], doses: [[0.5, 1]], concentracao: 5 },
@@ -262,4 +279,7 @@ export {
     RoedoresOutrasMed,
     RoedoresAntipara,
     RoedoresNutricional,
+    AnestesiaPequenosRoedores,
+    AnestesiaPsitacideos,
+    AnestesiaTrachemys,
 }

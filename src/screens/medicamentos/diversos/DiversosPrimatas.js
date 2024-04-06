@@ -9,24 +9,24 @@ const DiversosPrimatas = ({ navigation }) => {
   const atualizacoes = [
     { index: 0, doses: [0, 0] },
     { index: 1, doses: [0, 0] },
-    { index: 2, doses: [2, 2] },
-    { index: 3, doses: [0.05, 0.1] },
-    { index: 4, doses: [2.5, 5] },
-    { index: 5, doses: [0.5, 0.5] },
-    { index: 6, doses: [5, 10] },
-    { index: 7, doses: [0.1, 0.5] },
-    { index: 8, doses: [0.1, 0.1] },
-    { index: 9, doses: [0.5, 1] },
-    { index: 10, doses: [0, 0] },
-    { index: 11, doses: [0.3, 4] },
-    { index: 12, doses: [0.5, 0.5] },
-    { index: 13, doses: [2, 2] },
-    { index: 14, doses: [0, 0] },
-    { index: 15, doses: [0.2, 1] },
+    { index: 2, doses: [25, 100] },
+    { index: 3, doses: [0, 0] },
+    { index: 4, doses: [0, 0] },
+    { index: 5, doses: [0, 0] },
+    { index: 6, doses: [2, 2] },
+    { index: 7, doses: [0.3, 0.5] },
+    { index: 8, doses: [0, 0] },
+    { index: 9, doses: [0.5, 0.8] },
+    { index: 10, doses: [0.45, 2] },
+    { index: 11, doses: [1, 4] },
+    { index: 12, doses: [0, 0] },
+    { index: 13, doses: [0, 0] },
+    { index: 14, doses: [0.25, 1.1] },
+    { index: 15, doses: [0.2, 0.5] },
     { index: 16, doses: [0, 0] },
-    { index: 17, doses: [0.1, 3] },
+    { index: 17, doses: [1, 2] },
     { index: 18, doses: [4, 15] },
-    { index: 19, doses: [25, 25] },
+    { index: 19, doses: [500, 500] },
   ];
 
   const medAtualizados = OutrasMed.map((med, i) => {
@@ -43,7 +43,7 @@ const DiversosPrimatas = ({ navigation }) => {
       array.splice(index[i], 1);
     }
   }
-  removerMedicamento(medAtualizados, []);
+  removerMedicamento(medAtualizados, [0, 1, 3, 4, 5, 8, 12, 13, 16]);
 
   return (
     <View style={styles.container}>
@@ -63,6 +63,9 @@ const DiversosPrimatas = ({ navigation }) => {
         <View>
           <CalculadoraBase medIndefinida={medAtualizados} />
         </View>
+        <Text style={styles.textoObs}>
+          Para sucralfato use 0.5g por animal
+        </Text>
       </ScrollView>
     </View>
   )

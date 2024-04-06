@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, ScrollView, Button } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import { TextInput } from "react-native-paper";
 import { useNavigation } from "@react-navigation/native";
 import styles from "./Style";
 import { CalcularButton, BotaoCalculadoraIndividual } from "./BotaoCustom";
 import InfoCalc from "../screens/popUp/PopUpInfo";
-
-
-
 
 const CalculadoraBase = (props) => {
     const medIndefinida = props
@@ -82,7 +79,7 @@ const CalculadoraBase = (props) => {
             </View>
             <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 20 }}>
                 <View>
-                    <BotaoCalculadoraIndividual rota={'Calculadora Individual'} navigation={navigation}/>
+                    <BotaoCalculadoraIndividual rota={'Calculadora Individual'} navigation={navigation} />
                 </View>
                 <View style={{ flex: 1, alignItems: 'center' }}>
                     <CalcularButton rota={calcular} />
