@@ -66,7 +66,7 @@ const Analgesia = [
 /* 5 */   { nome: 'Ketoprofeno', doses: [0, 0], concentracao: [20], unidade: 'mg/ml' },
 /* 6 */   { nome: 'Meloxicam', doses: [0, 0], concentracao: [1, 2, 20], unidade: 'mg/ml' },
 /* 7 */   { nome: 'Predinisolona', doses: [0, 0], concentracao: [4], unidade: 'mg/ml' },
-/* 8 */   { nome: 'Tramadol', doses: [0, 0], concentracao: [50, 100], unidade: 'mg/ml' },
+/* 8 */   { nome: 'Tramadol', doses: [0, 0], concentracao: [20, 40, 50, 100], unidade: 'mg/ml' },
 /* 9 */  { nome: 'Morfina', doses: [0, 0], concentracao: [10], unidade: 'mg/ml' },
 ];
 
@@ -82,7 +82,7 @@ const AnestSedat = [
  /* 8 */   { nome: 'Midazolam', doses: [0, 0], concentracao: [5], unidade: 'mg/ml' },
  /* 9 */   { nome: 'Petidina', doses: [0, 0], concentracao: [50], unidade: 'mg/ml' },
  /* 10 */  { nome: 'Propofol', doses: [0, 0], concentracao: [10], unidade: 'mg/ml' },
- /* 11 */  { nome: 'Tramadol', doses: [0, 0], concentracao: [50, 100], unidade: 'mg/ml' },
+ /* 11 */  { nome: 'Tramadol', doses: [0, 0], concentracao: [20, 40, 50, 100], unidade: 'mg/ml' },
  /* 12 */  { nome: 'Xilazina', doses: [0, 0], concentracao: [20], unidade: 'mg/ml' },
 ];
 

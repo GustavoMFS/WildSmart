@@ -69,17 +69,21 @@ const CalculadoraBase = (props) => {
                 <View key={index} style={styles.linha}>
                     <Text style={[styles.celula2]}>{nomeMedicamento}</Text>
                     <Text style={[styles.celula]}>{concentracao} {unidade}</Text>
-                    <View style={{ flex: 1 }}>
+                    <TouchableOpacity
+                        activeOpacity={1}
+                        style={{ paddingHorizontal: 20, paddingVertical: 10 }}
+                        onPress={() => { }}
+                    >
                         <Picker
                             selectedValue={concentracoesSelecionadas[index]}
-                            style={{ height: 50, width: pickerWidth, paddingLeft: 15 }}
+                            style={{ height: 50, width: pickerWidth }}
                             dropdownIconColor="#000"
                             onValueChange={(itemValue) => handleConcentracaoChange(index, itemValue)}>
                             {props.medIndefinida[index].concentracao.map((concentracao, index) => (
-                                <Picker.Item key={index} label={`${concentracao} ${unidade}`} value={concentracao} style={{ flex: 1 }} />
+                                <Picker.Item key={index} label={`${concentracao} ${unidade}`} value={concentracao} />
                             ))}
                         </Picker>
-                    </View>
+                    </TouchableOpacity>
                     <Text style={[styles.celula]}>{doseMinima}</Text>
                     <Text style={[styles.celula]}>{doseMaxima}</Text>
                     <Text style={[styles.celula]}>{volumeMinimo.toFixed(2)}</Text>
