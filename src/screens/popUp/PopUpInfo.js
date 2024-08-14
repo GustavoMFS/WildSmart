@@ -22,9 +22,11 @@ export const InfoCalc = () => {
         <View style={styles.modalContainer}>
           <View style={styles.modalContent}>
             <Text style={styles.textoHeader}>Como funciona a Calculadora de Doses:{"\n"}</Text>
-            <Text style={styles.textoBody}> Na área indicada coloque o peso do animal, em quilos, e em seguida pressione o botão "Calcular"</Text>
-            <Text style={styles.textoBody}> Na tabela será possível ver o nome dos medicamentos, a espécie indicada, sua dose máxima e mínima e em seguida o volume máximo e mínimo referente as doses citadas</Text>
-            <Text style={styles.textoBody}> Caso queira usar uma dose ou concentração diferente acesse a Calculadora Individual no icone de calculadora ao lado</Text>
+            <Text style={styles.textoBody}> Na área indicada coloque o peso do animal, em quilos, e em seguida pressione o botão "Calcular".</Text>
+            <Text style={styles.textoBody}> Você pode mudar a dose do medicamento pressionando a concentração de cada medicamento.</Text>
+            <Text style={styles.textoBody}> Na tabela será possível ver o nome dos medicamentos, a espécie indicada, sua dose máxima e mínima e em seguida o volume máximo e mínimo referente as doses citadas.</Text>
+            <Text style={styles.textoBody}> Medicamentos com "(comprimido)" no nome não devem ter o volume levado em consideração, uma vez que não são líquidos.</Text>
+            <Text style={styles.textoBody}> Caso queira usar uma dose ou concentração diferente acesse a Calculadora Individual no icone de calculadora ao lado.</Text>
             <TouchableOpacity onPress={() => setModalVisivel(false)} style={styles.fecharBotao}>
               <Text style={styles.textoFecharBotao}>Fechar</Text>
             </TouchableOpacity>
@@ -105,10 +107,10 @@ const styles = StyleSheet.create({
   botao: {
     padding: 10,
     borderRadius: 5,
-    flexDirection: 'row', 
-    alignItems: 'center', 
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  
+
 });
 
 export default InfoCalc

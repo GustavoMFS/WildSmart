@@ -8,7 +8,6 @@ import { CalcularButton, BotaoCalculadoraIndividual } from "./BotaoCustom";
 import InfoCalc from "../screens/popUp/PopUpInfo";
 
 const CalculadoraBase = (props) => {
-    const medIndefinida = props
     const [peso, setPeso] = useState('');
     const [concentracoesSelecionadas, setConcentracoesSelecionadas] = useState([]);
     const [resultados, setResultados] = useState([]);
@@ -17,13 +16,13 @@ const CalculadoraBase = (props) => {
         calcular();
     }, [peso, concentracoesSelecionadas]);
 
-
     const handlePesoInputChange = (text) => {
         const regex = /^[0-9]*(?:[.,][0-9]*)?$/;
         if (regex.test(text) && (text.indexOf('.') === -1 || text.indexOf('.') === text.lastIndexOf('.'))) {
             setPeso(text);
         }
     };
+
     const calcular = () => {
         const res = [];
         for (let i = 0; i < props.medIndefinida.length; i++) {
@@ -39,7 +38,7 @@ const CalculadoraBase = (props) => {
             res.push([nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo, concentracaoSelecionada, unidade]);
         }
         setResultados(res);
-    }
+    };
 
     const handleConcentracaoChange = (index, concentracao) => {
         const updatedConcentracoesSelecionadas = [...concentracoesSelecionadas];
@@ -51,7 +50,7 @@ const CalculadoraBase = (props) => {
         return (
             <View style={styles.cabecalhoTabela}>
                 <Text style={[styles.celula2, styles.textoCabecalho]}>Medicamento</Text>
-                <Text style={[styles.celula, styles.textoCabecalho]}>Concentração</Text>
+                <Text style={[styles.celula, styles.textoCabecalho]}>Concentração (Pressione para mudar)</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Dose Mínima (mg/kg)</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Dose Máxima (mg/kg)</Text>
                 <Text style={[styles.celula, styles.textoCabecalho]}>Volume Mínimo (ml)</Text>
@@ -62,28 +61,24 @@ const CalculadoraBase = (props) => {
 
     const renderTableData = () => {
         return resultados.map((res, index) => {
-            const [nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo, concentracao, unidade] = res;
+            const [nomeMedicamento, doseMinima, doseMaxima, volumeMinimo, volumeMaximo, concentracaoSelecionada, unidade] = res;
             const maxLength = Math.max(...props.medIndefinida[index].concentracao.map(conc => `${conc}`.length));
-            const pickerWidth = maxLength * 10
+            const pickerWidth = Math.max(maxLength * 15, 150);
+
             return (
                 <View key={index} style={styles.linha}>
                     <Text style={[styles.celula2]}>{nomeMedicamento}</Text>
-                    <Text style={[styles.celula]}>{concentracao} {unidade}</Text>
-                    <TouchableOpacity
-                        activeOpacity={1}
-                        style={{ paddingHorizontal: 20, paddingVertical: 10 }}
-                        onPress={() => { }}
-                    >
+                    <View style={{ position: 'relative', flex: 2 }}>
+                        <Text style={[styles.celula]}>{concentracaoSelecionada} {unidade}</Text>
                         <Picker
-                            selectedValue={concentracoesSelecionadas[index]}
-                            style={{ height: 50, width: pickerWidth }}
-                            dropdownIconColor="#000"
+                            selectedValue={concentracaoSelecionada}
+                            style={[styles.celula, { position: 'absolute', width: pickerWidth, height: 50, opacity: 0 }]}
                             onValueChange={(itemValue) => handleConcentracaoChange(index, itemValue)}>
-                            {props.medIndefinida[index].concentracao.map((concentracao, index) => (
-                                <Picker.Item key={index} label={`${concentracao} ${unidade}`} value={concentracao} />
+                            {props.medIndefinida[index].concentracao.map((concentracao, i) => (
+                                <Picker.Item key={i} label={`${concentracao} ${unidade}`} value={concentracao} />
                             ))}
                         </Picker>
-                    </TouchableOpacity>
+                    </View>
                     <Text style={[styles.celula]}>{doseMinima}</Text>
                     <Text style={[styles.celula]}>{doseMaxima}</Text>
                     <Text style={[styles.celula]}>{volumeMinimo.toFixed(2)}</Text>
@@ -93,7 +88,7 @@ const CalculadoraBase = (props) => {
         });
     };
 
-    const navigation = useNavigation()
+    const navigation = useNavigation();
 
     return (
         <View style={styles.container}>

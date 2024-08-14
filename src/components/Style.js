@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
   container2: {
     flex: 1,
     backgroundColor: 'white',
-    // alignItems: 'center',
   },
   tituloPosicao: {
     alignItems: 'center',
@@ -58,7 +57,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#c4c4c4",
     height: 60,
-    // padding: 10,
   },
   titulo2: {
     fontSize: 18,
@@ -85,7 +83,7 @@ const styles = StyleSheet.create({
     borderColor: "#ddd",
     borderRadius: 5,
     backgroundColor: '#545258',
-    width: 600
+    width: 1010
   },
   cabecalhoTabela: {
     flexDirection: "row",
@@ -115,6 +113,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     color: '#000000',
     fontSize: 17,
+    overflow: "hidden"
   },
   celula2: {
     flex: 2,
@@ -123,6 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 5,
     color: '#000000',
     fontSize: 17,
+    overflow: "visible"
   },
   textoObs: {
     textAlign: 'center',
@@ -183,8 +183,5 @@ const styles = StyleSheet.create({
     color: 'black',
     padding: 20,
   },
-
-
 });
-
 export default styles

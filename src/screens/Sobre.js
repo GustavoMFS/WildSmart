@@ -35,8 +35,17 @@ const Sobre = ({ navigation }) => {
       <TouchableHighlight onPress={abrirEmail}>
         <Text style={{ fontSize: 20, textAlign: 'center', color: 'blue' }}>gusmfscoder@gmail.com</Text>
       </TouchableHighlight>
+      <Text style={styles.textoWarn}>
+        {'\t'} Ultima atualização:
+      </Text>
+      <Text style={styles.textoWarn}>
+        Adicionado opção para alterar concentração dos medicamentos nas calculadoras para roedores.{'\n'}{'\n'}
+        Removido botão para mudar concentração dos medicamentos.{'\n'}{'\n'}
+        Adicionado opção para mudar o valor da concentração do medicamento pressionando diretamente o valor selecionado.{'\n'}{'\n'}
+        Adicionado novas concentrações de medicamentos{'\n'}{'\n'}
+      </Text>
       <View style={styles.creditosRodaPe}>
-        <Text style={styles.creditos}> V 1.1.0</Text>
+        <Text style={styles.creditos}> V 1.2.0</Text>
       </View>
     </View>
   )
