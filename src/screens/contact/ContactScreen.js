@@ -37,21 +37,15 @@ export default function ContactScreen() {
       <View style={styles.section}>
         <Text style={styles.sectionTitle}>📝 Últimas Atualizações</Text>
         <View style={styles.updateList}>
-          <Text style={styles.updateItem}>
-            - v1.0.0: Tela de dosagem implementada
-          </Text>
-          <Text style={styles.updateItem}>
-            - v1.0.1: Correção de layout na calculadora
-          </Text>
-          <Text style={styles.updateItem}>
-            - v1.1.0: Adicionada navegação por espécies
-          </Text>
+          <Text style={styles.updateItem}></Text>
+          <Text style={styles.updateItem}></Text>
+          <Text style={styles.updateItem}></Text>
         </View>
       </View>
 
       {/* App Version */}
       <View style={styles.section}>
-        <Text style={styles.text}>Versão: 1.1.0</Text>
+        <Text style={styles.text}>Versão: 2.0.0</Text>
       </View>
     </ScrollView>
   );

@@ -7,6 +7,7 @@ import DosageCalculatorScreen from '../screens/calculator/dosageCalculator/Dosag
 import SpeciesNavigator from './SpeciesNavigator';
 import ProtocolsNavigator from './ProtocolsNavigator';
 import ContactScreen from '../screens/contact/ContactScreen';
+import DilutionCalculatorScreen from '../screens/calculator/dilutionCalculator/DilutionCalculatorScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,14 @@ export default function AppNavigator() {
         component={DosageCalculatorScreen}
         options={{
           title: 'Calculadora de Dosagem',
+          headerTitleAlign: 'center',
+        }}
+      />
+      <Stack.Screen
+        name="DilutionCalculator"
+        component={DilutionCalculatorScreen}
+        options={{
+          title: 'Calculadora de Diluição',
           headerTitleAlign: 'center',
         }}
       />
